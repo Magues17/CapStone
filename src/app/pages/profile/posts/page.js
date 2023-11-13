@@ -1,26 +1,35 @@
-import Avatar from "./Avatar";
-import Card from "./Card";
+
+import Avatar from "../../pages/components/Avatar";
+import Card from "../../pages/components/Card";
 import React from "react";
-import DropDown from "./DropDown";
+import DropDown from "../../pages/components/DropDown";
+import Link from "next/link";
 
-export default function PostCard() {
-  //  const [dropdownOpen, setDropdownOpen] = useState(false)
-
+export default function PostsOfMine() {
   return (
-    <Card>
-      <div className="flex gap-3 items-center">
+<Card>
+    <div className="flex gap-3 items-center">
         <div>
+          <Link href='/profile'>
+          <span className="cursor-pointer">
           <Avatar />
+          </span>
+          </Link>
         </div>
         <div className="grow">
           <p>
-            <a className="font-semibold">Jerry Rice</a> shared a{" "}
+            <Link href='/profile'>
+            <span className="mr-1 font-semibold cursor-pointer hover:underline">
+            War Chief Thrall
+            </span> 
+            </Link>
+            shared a{" "}
             <a className="text-socialBlue">album</a>
           </p>
           <p className="text-gray-500 text-sm">2 hours ago</p>
         </div>
         
-          <DropDown />
+        <DropDown />
         
       </div>
 
@@ -36,7 +45,7 @@ export default function PostCard() {
 
         <div className="rounded-md overflow-hidden">
           <img
-            src="https://plus.unsplash.com/premium_photo-1664304191259-567c510710dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            src="https://www.warcrafttavern.com/wp-content/uploads/2023/03/Orgrimmar-Travel-Guide-Gates.jpg"
             alt=""
           />
         </div>
@@ -126,6 +135,7 @@ export default function PostCard() {
           </button>
         </div>
       </div>
-    </Card>
+      </Card>
   );
+  
 }
