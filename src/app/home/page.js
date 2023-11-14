@@ -1,7 +1,7 @@
-
+'use client'
 
 import Format from "../components/Format";
-import PostsOfMine from "./profile/posts";
+import PostsOfMine from "../pages/profile/posts/page";
 import PostFormCard from '../components/PostFormCard';
 
 
@@ -10,7 +10,6 @@ export default function Home() {
 <Format>
               <PostFormCard />
               <PostsOfMine />
-              
 
 </Format>
   );

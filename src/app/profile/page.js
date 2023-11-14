@@ -1,17 +1,18 @@
 "use client"
 
-import Format from "../pages/components/Format";
-import Card from "../pages/components/Card";
-import Avatar from "../pages/components/Avatar";
+import Format from "../components/Format";
+import Card from "../components/Card";
+import Avatar from "../components/Avatar";
 import Link from "next/link";
 import AboutMe from "./page"
 import FriendsOfMine from "./friends/page";
 import PhotosMe from "./photos/page"
-//import { usePathname } from "next/navigation";
-// import { Router } from "react-router";
+import { usePathname } from "next/navigation";
+import { Router } from "react-router";
 import PostsOfMine from "./posts/page";
-import Pathway from "../pages/router";
-import { useRouter } from 'next/router';
+// import Pathway from "../router";
+// import { useRouter } from 'next/router';
+
 
 // ReactDOM.render(
 //   <Router>
@@ -28,13 +29,14 @@ import { useRouter } from 'next/router';
 
 
 export default function ProfilePage() {
-  const router = useRouter();
-  const { pathname } = router;
-
-  const isPosts = pathname.includes('posts') || pathname === '/profile';
-  const isAbout = pathname.includes('about') || pathname === '/about';
-  const isFriends = pathname.includes('friends');
-  const isPhotos = pathname.includes('photos');
+  const router = usePathname();
+  const { asPath:pathname } = router;
+  console.log(router)
+  const isPosts = router.includes('posts') || pathname === '/posts';
+  const isAbout = router.includes('about') || pathname === '/about';
+  const isFriends = router.includes('friends');
+  const isPhotos = router.includes('photos');
+  
 
 
 
@@ -98,6 +100,9 @@ export default function ProfilePage() {
 
 
       </Card>
+
+      <PostsOfMine />
+
       {isPosts && (
         <div>
           <PostsOfMine />

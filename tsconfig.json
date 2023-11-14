@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "../photos/page.js"  ],
+, "../photos/page.js", "src/app/pages/profile/page.js", "src/app/profile/friends/page.js"  ],
   "exclude": [
     "node_modules"
   ]

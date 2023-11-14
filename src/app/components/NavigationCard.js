@@ -31,7 +31,7 @@ export default function NavigationCard() {
           </svg>
           Home
         </Link>
-        <Link href="" className={nonActiveElementClasses}>
+        <Link href="/profile/friends" className={nonActiveElementClasses}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
